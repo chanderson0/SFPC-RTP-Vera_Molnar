@@ -1,0 +1,15 @@
+{
+  "name": "rtp-vera_molnar-0001",
+  "version": "0.0.1",
+  "authors": [
+    "Chris Anderson <chanderson0@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
