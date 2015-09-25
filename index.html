@@ -8,26 +8,83 @@
   <!-- title -->
   <title>Vera Molnar - SFPC</title>
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ccc;
+      font-family: 'Open Sans', sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #left {
+      float: left;
+      width: 220px;
+      height: 100%;
+      padding: 20px;
+      text-align: left;
+      background: #fff;
+    }
+
+    #right {
+      margin-left: 260px;
+      height: 100%;
+    }
+
+    .selected {
+      color: #f00;
+    }
+  </style>
+
 </head>
 
 <body>
 
-<h3>Hypertransformations</h3>
-<img src="http://dam.org/mix/molnar-hypertransformation-gro--dam-11152-sCl4i-de-4.jpg">
-<ul>
-  <li><a href="0001">glitch1</a></li>
-  <li><a href="0002">glitch2</a></li>
-  <li><a href="0003">glitch3</a></li>
-  <li><a href="0004">accurate</a></li>
-</ul>
+<div id="left">
+  <h1>Vera Molnar</h1>
 
-<h3>Interruptions</h3>
-<img src="http://media.vam.ac.uk/media/thira/collection_images/2011EY/2011EY6963_jpg_ds.jpg">
-<ul>
-  <li><a href="0005">process1</a></li>
-  <li><a href="0006">process2</a></li>
-  <li><a href="0007">accurate</a></li>
-</ul>
+  <h3>Hypertransformations</h3>
+  <ul>
+    <li><a href="#" data-src="vera/hypertransformations.html" class="selected">original</a></li>
+    <li><a href="#" data-src="0004">recreated</a></li>
+    <li><a href="#" data-src="0001">(glitch1)</a></li>
+    <li><a href="#" data-src="0002">(glitch2)</a></li>
+    <li><a href="#" data-src="0003">(glitch3)</a></li>
+  </ul>
+
+  <h3>Interruptions</h3>
+  <ul>
+    <li>
+      <a href="#" data-src="vera/interruptions.html">original</a>
+    </li>
+    <li><a href="#" data-src="0007">recreated</a></li>
+    <li><a href="#" data-src="0005">(process1)</a></li>
+    <li><a href="#" data-src="0006">(process2)</a></li>
+  </ul>
+</div>
+
+<div id="right">
+  <iframe id="right_frame" width="100%" height="100%" src="vera/hypertransformations.html" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    <p>Your browser doesn't support iFrames</p>
+  </iframe>
+</div>
+
+<script>
+$('li a').click(function() {
+    var src = $(this).data('src');
+    var iframe = $('#right_frame');
+    iframe.attr('src', src);
+
+    $('li a').removeClass('selected');
+    $(this).addClass('selected');
+
+    return false;
+  });
+</script>
 
 </body>
 
